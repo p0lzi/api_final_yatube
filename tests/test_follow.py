@@ -43,7 +43,7 @@ class TestFollowAPI:
         )
 
         assert len(test_data) == Follow.objects.filter(following__username=user.username).count(), (
-            'Проверьте, что при GET запросе на `/api/v1/follow/` возвращается список всех подписчиков пользователя'
+            f'Проверьте, что при GET запросе на `/api/v1/follow/` возвращается список всех подписчиков пользователя {test_data}'
         )
 
         follow = Follow.objects.filter(user=user)[0]
